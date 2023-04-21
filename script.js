@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const body = document.querySelector('body');
     const news = new Messages();
+    news.fetchData()
   });
 
 
@@ -8,7 +9,7 @@ class Messages {
     constructor() {
       this.node = document.querySelector('.newsStories')
       this.SPEED = 10000;
-      setTimeout(this.fetchData.bind(this), this.SPEED);
+    //   setTimeout(this.fetchData.bind(this), this.SPEED);
     }
     
     async fetchData(){
@@ -44,6 +45,6 @@ class Messages {
                 })
             })
             .catch(err => console.error(err));
-            setTimeout(this.fetchData.bind(this), this.SPEED);
+            // setTimeout(this.fetchData.bind(this), this.SPEED);
             } 
           }
