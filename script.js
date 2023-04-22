@@ -76,6 +76,7 @@ class MessagesOne {
     async fetchTeslaDataTwo(){
         var url = 'https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol=TSLA&apikey=S3NUXHCE6KZIP0HC';
         let xyValues = []
+
         let lowest = Infinity
         let highest = 0
         let length
@@ -98,7 +99,7 @@ class MessagesOne {
                 const percentChangeHTMl = document.querySelector('.percentChangeOne')
                 percentChangeHTMl.innerText = 'Percent Change: ' + percentChange + " %"
                 length = Object.keys(response['Weekly Time Series']).length
-                let count = 0
+                let count = Object.keys(response['Weekly Time Series']).length
                 Object.keys(response['Weekly Time Series']).forEach(week => {
                     let curr = {}
                     curr['x'] = count
@@ -110,31 +111,38 @@ class MessagesOne {
                     if (Number(response['Weekly Time Series'][week]['1. open']) > highest){
                         highest = Number(response['Weekly Time Series'][week]['1. open'])
                     }
-                    count ++
+                    count --
                  })
             }
             )
             .catch(err => console.error(err));
 
-
+            let xyValuesReversed = xyValues.reverse()
             new Chart("teslaChart", {
             type: "scatter",
             data: {
                 datasets: [{
                 pointRadius: 1,
                 pointBackgroundColor: "rgb(0,0,255)",
-                data: xyValues
+                data: xyValuesReversed
                 }]
             },
             options: {
                 legend: {display: false},
                 scales: {
-                xAxes: [{ticks: {min: 0, max: length}}],
-                yAxes: [{ticks: {min: lowest, max: highest}}],
+                // xAxes: [{ticks: {min: 0, max: length}}],
+                // yAxes: [{ticks: {min: lowest, max: highest}}],
+                xAxes: [{ticks: {
+                    display: false
+                }}],
+                yAxes: [{ticks: {
+                    display: false
+                }}],
                 }
+
             }
             });
-            console.log(xyValues)
+            // console.log(xyValues)
     }
 
 }
@@ -156,7 +164,7 @@ class MessagesTwo {
         fetch('https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete?q=apple&region=US', options)
             .then(response => response.json())
             .then(response => {
-                console.log(response)
+                // console.log(response)
                 const ticker =document.querySelector('.tickerTwo')
                 ticker.innerText = response.quotes[0].symbol
                 response.news.forEach(article =>{
@@ -186,6 +194,7 @@ class MessagesTwo {
     async fetchAppleDataTwo(){
         var url = 'https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol=AAPL&apikey=S3NUXHCE6KZIP0HC';
         let xyValues = []
+
         let lowest = Infinity
         let highest = 0
         let length
@@ -208,7 +217,7 @@ class MessagesTwo {
                 const percentChangeHTMl = document.querySelector('.percentChangeTwo')
                 percentChangeHTMl.innerText = 'Percent Change: ' + percentChange + " %"
                 length = Object.keys(response['Weekly Time Series']).length
-                let count = 0
+                let count = Object.keys(response['Weekly Time Series']).length
                 Object.keys(response['Weekly Time Series']).forEach(week => {
                     let curr = {}
                     curr['x'] = count
@@ -220,31 +229,36 @@ class MessagesTwo {
                     if (Number(response['Weekly Time Series'][week]['1. open']) > highest){
                         highest = Number(response['Weekly Time Series'][week]['1. open'])
                     }
-                    count ++
+                    count --
                  })
             }
             )
             .catch(err => console.error(err));
 
-
+            let xyValuesReversed = xyValues.reverse()
             new Chart("appleChart", {
-            type: "scatter",
-            data: {
-                datasets: [{
-                pointRadius: 1,
-                pointBackgroundColor: "rgb(0,0,255)",
-                data: xyValues
-                }]
-            },
-            options: {
-                legend: {display: false},
-                scales: {
-                xAxes: [{ticks: {min: 0, max: length}}],
-                yAxes: [{ticks: {min: lowest, max: highest}}],
+                type: "scatter",
+                data: {
+                    datasets: [{
+                    pointRadius: 1,
+                    pointBackgroundColor: "rgb(0,0,255)",
+                    data: xyValuesReversed
+                    }]
+                },
+                options: {
+                    legend: {display: false},
+                    scales: {
+                    // xAxes: [{ticks: {min: 0, max: length}}],
+                    // yAxes: [{ticks: {min: lowest, max: highest}}],
+                    xAxes: [{ticks: {
+                        display: false
+                    }}],
+                    yAxes: [{ticks: {
+                        display: false
+                    }}],
+                    }
                 }
-            }
-            });
-            console.log(xyValues)
+                });
     }    
 }
 
@@ -296,6 +310,7 @@ class MessagesThree {
     async fetchMicrosoftDataTwo(){
         var url = 'https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol=MSFT&apikey=S3NUXHCE6KZIP0HC';
         let xyValues = []
+
         let lowest = Infinity
         let highest = 0
         let length
@@ -318,7 +333,7 @@ class MessagesThree {
                 const percentChangeHTMl = document.querySelector('.percentChangeThree')
                 percentChangeHTMl.innerText = 'Percent Change: ' + percentChange + " %"
                 length = Object.keys(response['Weekly Time Series']).length
-                let count = 0
+                let count = Object.keys(response['Weekly Time Series']).length
                 Object.keys(response['Weekly Time Series']).forEach(week => {
                     let curr = {}
                     curr['x'] = count
@@ -330,27 +345,33 @@ class MessagesThree {
                     if (Number(response['Weekly Time Series'][week]['1. open']) > highest){
                         highest = Number(response['Weekly Time Series'][week]['1. open'])
                     }
-                    count ++
+                    count --
                  })
             }
             )
             .catch(err => console.error(err));
 
-
+            let xyValuesReversed = xyValues.reverse()
             new Chart("msftChart", {
             type: "scatter",
             data: {
                 datasets: [{
                 pointRadius: 1,
                 pointBackgroundColor: "rgb(0,0,255)",
-                data: xyValues
+                data: xyValuesReversed
                 }]
             },
             options: {
                 legend: {display: false},
                 scales: {
-                xAxes: [{ticks: {min: 0, max: length}}],
-                yAxes: [{ticks: {min: lowest, max: highest}}],
+                // xAxes: [{ticks: {min: 0, max: length}}],
+                // yAxes: [{ticks: {min: lowest, max: highest}}],
+                xAxes: [{ticks: {
+                    display: false
+                }}],
+                yAxes: [{ticks: {
+                    display: false
+                }}],
                 }
             }
             });

@@ -1,12 +1,18 @@
+html {
+    overflow-x: hidden;
+  }
+
 body {
     height: 600px;
-    width: 800px;
+    width: 790px;
+
 }
+
 
 
 .accordion {
     background-color: #eee;
-    width: 790px;
+    width: 750px;
     color: #444;
     cursor: pointer;
     box-sizing: border-box;
@@ -15,7 +21,9 @@ body {
     border: none;
     outline: none;
     transition: 0.4s;
-    border: 5px solid black;
+    border: 2.5px solid black;
+    font-size: 20px;
+    font-weight: bold;
   }
   
   .active, .accordion:hover {
@@ -25,10 +33,10 @@ body {
 
 .window {
     display: grid;
-    width: 780px;
+    width: 730px;
     height: 650px;
     grid-template-rows: 75px 350px 200px;
-    border: 5px solid black;
+    border: 2.5px solid black;
 
 
     /* padding: 0 18px; */
@@ -47,7 +55,7 @@ img {
 
 .currInfo {
     display: grid;
-    width: 790px;
+    width: 730px;
     height: 300px;
     grid-template-columns: 175px 425px;
 }
@@ -108,7 +116,7 @@ img {
     grid-template-rows: auto auto;
     height: 100%;
     width: 100%;
-    overflow-y:auto; 
+    overflow-y: scroll; 
 }
 
 .newsStoriesTwo {
@@ -116,7 +124,7 @@ img {
     grid-template-rows: auto auto;
     height: 100%;
     width: 100%;
-    overflow-y:auto; 
+    overflow-y: scroll; 
 }
 
 .newsStoriesThree {
@@ -124,7 +132,7 @@ img {
     grid-template-rows: auto auto;
     height: 100%;
     width: 100%;
-    overflow-y:auto; 
+    overflow-y: scroll; 
 }
 
 .newsArticle {
@@ -143,14 +151,14 @@ img {
 
 #teslaChart {
     height: 300px !important;
-    width: 600px !important;
+    width: 550px !important;
 }
 
 #appleChart {
     height: 300px !important;
-    width: 600px !important;
+    width: 550px !important;
 }
 #msftChart {
     height: 300px !important;
-    width: 600px !important;
+    width: 550px !important;
 }
