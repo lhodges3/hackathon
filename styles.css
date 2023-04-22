@@ -1,38 +1,125 @@
+body {
+    height: 600px;
+    width: 800px;
+}
+
+
+.accordion {
+    background-color: #eee;
+    width: 790px;
+    color: #444;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 18px;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    border: 5px solid black;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+
+
 .window {
     display: grid;
-    width: 25vw;
-    height: 45vh;
-    grid-template-rows: 25% 10% 65%;
+    width: 780px;
+    height: 650px;
+    grid-template-rows: 75px 350px 200px;
     border: 5px solid black;
+
+
+    /* padding: 0 18px; */
+    background-color: white;
+    max-height: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: max-height 0.2s ease-out;
+    place-items: center;
 }
 
 img {
-    height: 100px;
+    height: 75px;
+    margin-top: 20px;
 }
 
 .currInfo {
     display: grid;
-    width: 100%;
-    height: 100%;
-    grid-template-columns: 33% 33% 33%;
+    width: 790px;
+    height: 300px;
+    grid-template-columns: 175px 425px;
+}
+.left {
+    display: grid;
+    grid-template-rows: 33% 33% 33%;
+}
+.right {
+    width: 500px;
 }
 
-.ticker {
-    height: 100%;
+.tickerOne {
+    height: auto;
+    width: 100%;
+}
+.tickerTwo {
+    height: auto;
     width: 100%;
 }
 
-.price {
-    height: 100%;
+.tickerThree {
+    height: auto;
     width: 100%;
 }
 
-.percentChange {
-    height: 100%;
+.priceOne {
+    height: auto;
+    width: 100%;
+}
+.priceTwo {
+    height: auto;
+    width: 100%;
+}
+.priceThree {
+    height: auto;
     width: 100%;
 }
 
-.newsStories {
+
+.percentChangeOne  {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.percentChangeTwo  {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.percentChangeThree  {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.newsStoriesOne {
+    display: grid;
+    grid-template-rows: auto auto;
+    height: 100%;
+    width: 100%;
+    overflow-y:auto; 
+}
+
+.newsStoriesTwo {
+    display: grid;
+    grid-template-rows: auto auto;
+    height: 100%;
+    width: 100%;
+    overflow-y:auto; 
+}
+
+.newsStoriesThree {
     display: grid;
     grid-template-rows: auto auto;
     height: 100%;
@@ -42,14 +129,28 @@ img {
 
 .newsArticle {
     width: 100%;
-    margin-top: 25px;
+    margin-top: 5px;
 }
 
 .newsArticle .publisher {
     width: 100%;
-    margin-top: 25px;
+    margin-top: 5px;
 }
 
 .newsArticle a {
     width: 100%;
+}
+
+#teslaChart {
+    height: 300px !important;
+    width: 600px !important;
+}
+
+#appleChart {
+    height: 300px !important;
+    width: 600px !important;
+}
+#msftChart {
+    height: 300px !important;
+    width: 600px !important;
 }

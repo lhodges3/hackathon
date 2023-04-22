@@ -7,26 +7,69 @@
     <title>Stock Prices</title>
 </head>
 <body>
-    <h2>Tesla Stock Price</h2>
+    <h3>Stock Prices</h3>
+    <button class="accordion">Tesla</button>
     <div class = "window">
         <img src = "Image/TSLA_BIG-29a70360.png">
         <div class = "currInfo">
-            <div class = "ticker">
-                TSLA
+            <div class = "left">
+                <div class = "tickerOne">           
+                </div>
+                <div class = "priceOne">
+                </div>
+                <div class = "percentChangeOne">
+                </div>
             </div>
-            <div class = "price">
-                100
-            </div>
-            <div class = "percentChange">
-                -2.5%
+            <div class = "right">
+                <canvas id= "teslaChart"></canvas>
             </div>
         </div>
-        <div class = "newsStories">
+        <div class = "newsStoriesOne">
 
+        </div>
+    </div>
+    <button class="accordion">Apple</button>
+    <div class = "window">
+        <img src = "Image/apple.png">
+        <div class = "currInfo">
+            <div class = "left">
+                <div class = "tickerTwo">
+                </div>
+                <div class = "priceTwo">
+                </div>
+                <div class = "percentChangeTwo">
+                </div>
+            </div>
+            <div class = "right">
+                <canvas id="appleChart"></canvas>
+            </div>     
+        </div>
+        <div class = "newsStoriesTwo">
+
+        </div>
+    </div>
+    <button class="accordion">Microsoft</button>
+    <div class = "window">
+        <img src = "Image/msft.png">
+        <div class = "currInfo">
+            <div class = "left">
+                <div class = "tickerThree"> 
+                </div>
+                <div class = "priceThree">
+                </div>
+                <div class = "percentChangeThree">
+                </div>
+            </div>
+            <div class = "right">
+                 <canvas id="msftChart"></canvas>
+            </div>
+        </div>
+        <div class = "newsStoriesThree">
         </div>
     </div>
     
 </body>
 <script src="script.js"></script>
+<script src="chart.js"></script>
 <link rel="stylesheet" href="styles.css">
 </html>

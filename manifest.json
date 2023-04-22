@@ -1,0 +1,12 @@
+{
+    "name": "Stock Prices",
+    "version": "1.0.0",
+    "description": "This is an extension to get up to date stock prices.",
+    "manifest_version": 3,
+    "author": "Murat Agrali and Liam Hodges",
+    "action": {
+        "default_popup": "index.html",
+        "deftault_title": "Stock Prices"
+    }
+
+}
